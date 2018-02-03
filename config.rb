@@ -13,25 +13,26 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+# configure :development do
+#   activate :livereload
+# end
 
 activate :external_pipeline,
   name: :webpack,
-  command: build? ? './node_modules/webpack/bin/webpack.js --bail' : './node_modules/webpack/bin/webpack.js --watch -d',
+  command: build? ? './node_modules/webpack/bin/webpack.js --bail' :
+                    './node_modules/webpack/bin/webpack.js --watch -d --color',
   source: ".tmp/dist",
   latency: 1
 
-#CircleCI Staging
-configure :staging do
-  activate :s3_sync do |s3_sync|
-    s3_sync.bucket                = 'staging.marchettibeauty.com'
-    s3_sync.region                = 'us-east-1'
-    end
-  end
-  
 
+# Build-specific configuration
+configure :build do
+  # Minify CSS on build
+  # activate :minify_css
 
-
-
+  # Minify Javascript on build
+  # activate :minify_javascript
+end
 
 
 

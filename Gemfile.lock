@@ -141,7 +141,7 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
-  middleman-s3_sync (~> 4.0.1.rc.3)
+  middleman-s3_sync
   tzinfo-data
   wdm (~> 0.1)
 
