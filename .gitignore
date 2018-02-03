@@ -1,5 +1,10 @@
 .bundle
 .cache
 .DS_Store
+
 .sass-cache
 build/
+
+/node_modules
+.tmp
+npm-debug.log

@@ -1,0 +1,18 @@
+machine:
+  ruby:
+    version: 2.4.1
+deployment:
+  staging:
+    branch: development
+    commands:
+      - bundle exec middleman s3_sync --environment=staging
+      
+  #  production:
+  #   branch: master
+  #   commands:
+  #    - bundle exec middleman s3_sync --environment=production
+
+
+test:
+  override:
+    - "true"

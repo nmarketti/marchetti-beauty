@@ -20,6 +20,14 @@ activate :external_pipeline,
   source: ".tmp/dist",
   latency: 1
 
+#CircleCI Staging
+configure :staging do
+  activate :s3_sync do |s3_sync|
+    s3_sync.bucket                = 'staging.marchettibeauty.com'
+    s3_sync.region                = 'us-east-1'
+    end
+  end
+  
 
 
 
