@@ -4,7 +4,6 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     entry: {
         site: "./source/javascripts/site.js",
-        slicklightbox: "./source/javascripts/slick-lightbox.min.js",
         vendor: [
             "jquery",
             "gsap/TweenMax",

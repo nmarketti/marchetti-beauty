@@ -24,18 +24,9 @@ activate :external_pipeline,
   source: ".tmp/dist",
   latency: 1
 
-
-# Build-specific configuration
-configure :build do
-  # Minify CSS on build
-  # activate :minify_css
-
-  # Minify Javascript on build
-  # activate :minify_javascript
-end
-
-
-
+  configure :development do
+    activate :livereload
+  end
 
 
 # With alternative layout

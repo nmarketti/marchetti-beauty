@@ -7,3 +7,4 @@ gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
 
 # Resources
 gem 'middleman-s3_sync'
+gem 'middleman-livereload', '~> 3.4'
