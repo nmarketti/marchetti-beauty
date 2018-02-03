@@ -1,4 +1,3 @@
-// webpack.config.js
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
@@ -8,18 +7,13 @@ module.exports = {
     entry: {
         site: "./source/javascripts/site.js",
         vendor: [
-                "jquery",
-                "TweenMax"
-            ]
+            "jquery",
+            "TweenMax",
+        ]
     },
     output: {
-        filename: "javascripts/[name].js", //Would like to use [name].[chunkhash]
-        path: __dirname + '/.tmp/dist',
-    },
-    resolve: {
-        alias: {
-            "TweenMax": __dirname + '/node_modules/gsap/src/uncompressed/TweenMax',
-        }
+        filename: "javascripts/[name].js",
+        path: __dirname + '/.tmp/dist'
     },
     module: {
         rules: [
@@ -30,7 +24,7 @@ module.exports = {
                     use: [
                         "css-loader",
                         "sass-loader"
-                    ]
+                    ],
                 })
             },
             {
@@ -40,6 +34,15 @@ module.exports = {
             }
         ]
     },
+    resolve: {
+        alias: {
+            "jquery": __dirname + '/node_modules/jquery/dist/jquery.js',
+            "TweenMax": __dirname + '/node_modules/gsap/src/uncompressed/TweenMax',
+            "animation-gsap": __dirname + '/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js',
+
+            
+        }
+      },
     plugins: [
         new ExtractTextPlugin({
             filename: "stylesheets/[name].css"
@@ -51,9 +54,5 @@ module.exports = {
         new UglifyJSPlugin({
             compress: { warnings: false }
         }),
-
-        //new BundleAnalyzerPlugin(),
-
-        //new CompressionPlugin({})
     ]
-}
+};
