@@ -1,14 +1,8 @@
-# Ignore bundler config
-/.bundle
-
-# Ignore the build directory
-/build
-
-# Ignore cache
-/.sass-cache
-/.cache
-/node_modules
-/.tmp
-
-# Ignore .DS_store file
+.bundle
+.cache
 .DS_Store
+.sass-cache
+build/
+node_modules/
+.tmp/
+.env

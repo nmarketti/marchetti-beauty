@@ -26,6 +26,13 @@ activate :external_pipeline,
     activate :livereload
   end
 
+configure :build do
+    # Minify CSS on build
+    activate :minify_css
+    activate :gzip
+    activate :minify_html
+  
+  end
 
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
@@ -50,13 +57,4 @@ activate :external_pipeline,
 #     'Helping'
 #   end
 # end
-
-# Build-specific configuration
-# https://middlemanapp.com/advanced/configuration/#environment-specific-settings
-
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript
-# end
-
 
