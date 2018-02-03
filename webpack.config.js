@@ -6,7 +6,6 @@ module.exports = {
         site: "./source/javascripts/site.js",
         vendor: [
             "jquery",
-            "gsap/TweenMax",
         ]
     },
     output: {
