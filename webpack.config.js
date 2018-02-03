@@ -1,16 +1,27 @@
+// webpack.config.js
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+var CompressionPlugin = require("compression-webpack-plugin");
+const path = require('path');
 
 module.exports = {
     entry: {
         site: "./source/javascripts/site.js",
         vendor: [
-            "jquery",
-        ]
+                "jquery",
+                "TweenMax"
+            ]
     },
     output: {
-        filename: "javascripts/[name].js",
-        path: __dirname + '/.tmp/dist'
+        filename: "javascripts/[name].js", //Would like to use [name].[chunkhash]
+        path: __dirname + '/.tmp/dist',
+    },
+    resolve: {
+        alias: {
+            "TweenMax": __dirname + '/node_modules/gsap/src/uncompressed/TweenMax',
+        }
     },
     module: {
         rules: [
@@ -24,7 +35,7 @@ module.exports = {
                     ]
                 })
             },
-            { 
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: "babel-loader"
@@ -37,6 +48,14 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: "vendor"
-        })
+        }),
+
+        new UglifyJSPlugin({
+            compress: { warnings: false }
+        }),
+
+        //new BundleAnalyzerPlugin(),
+
+        //new CompressionPlugin({})
     ]
 }
