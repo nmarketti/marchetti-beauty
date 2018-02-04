@@ -135,3 +135,7 @@ workflows:
           filters:
             branches:
               only: development
+      - master:
+          filters:
+            branches:
+              only: master
