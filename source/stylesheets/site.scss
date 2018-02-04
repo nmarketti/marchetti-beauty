@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Bold.woff2') format('woff2'),
+      url('/fonts/Gotham-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  background-color: #231F20;
+  padding:0;
+  margin:0;
+  position:absolute;
+  height:100%;
+  width:100%;
+}
+
+.line-divide {
+  height:1px;
+  width:0px;
+  margin:auto;
+  margin-bottom:25px;
+  background:white;
+}
+
+#marchetti {
+  position:absolute;
+}
+
+.marchetti-fade {
+  opacity:0;
+}
+
+.hero {
+  height:100%;
+  width:100%;
+  display:flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display:block;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+width:325px;
+position:relative;
+padding:25px 0px;
+}
+
+.title {
+  font-family: Gotham, Helvetica;
+  text-transform:uppercase;
+  letter-spacing: .5em;
+  font-size: .8em;
+  text-align: center;
+  color:white;
+  line-height: 2em;
+  opacity:.7;
+}
+
+a {
+  color:white;
+  text-decoration:none;
+}
+
+.contact {
+  position:absolute;
+  font-family: Gotham, Helvetica;
+  text-transform:uppercase;
+  letter-spacing: .5em;
+  font-size: .8em;
+  text-align: center;
+  color:white;
+  line-height: 2em;
+  opacity:.7;
+  bottom:15px;
+}
+
+.btn {
+  border:2px solid;
+  padding: 24px 32px;
+  transition: .8s ease;
+}
+
+.btn:hover{
+  transition: .8s ease;
+  background:white;
+  color:black;
+}
+
+btn-default {
+  border-color: white;
+  
+}
+.services {
+  position:absolute;
+  bottom:150px;
+  margin:auto;
+}
