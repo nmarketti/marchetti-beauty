@@ -9,7 +9,6 @@ module.exports = {
         vendor: [
             "jquery",
             "TweenMax",
-            "gsap-css",
         ]
     },
     output: {
@@ -38,7 +37,6 @@ module.exports = {
         alias: {
             "jquery": __dirname + '/node_modules/jquery/dist/jquery.js',
             "TweenMax": __dirname + '/node_modules/gsap/src/uncompressed/TweenMax.js',
-            "TweenMax": __dirname + '/node_modules/gsap/src/uncompressed/plugins/CSSPlugin.js',
 
             
         }
